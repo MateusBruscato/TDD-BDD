@@ -1,0 +1,23 @@
+[
+    {
+        "id": "22eae565-f029-42ae-ac7e-3729f4e844c7",
+        "name": "Mustang",
+        "releaseYear": 2023,
+        "available": true,
+        "gasAvailable": true
+    },
+    {
+        "id": "d6c870fd-2dd5-49d8-895f-3efa08bf197a",
+        "name": "Grand Caravan",
+        "releaseYear": 2022,
+        "available": true,
+        "gasAvailable": true
+    },
+    {
+        "id": "1b37cc4a-826c-4bdd-a6f7-f545d78bae39",
+        "name": "Land Cruiser",
+        "releaseYear": 2023,
+        "available": true,
+        "gasAvailable": true
+    }
+]
