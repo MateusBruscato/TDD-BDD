@@ -23,9 +23,9 @@ class CarService {
     return carId;
   }
 
-  getAvailableCar(carCategory) {
+  async getAvailableCar(carCategory) {
     const carId = this.chooseRandomCar(carCategory);
-    const car = this.carRepository.find(carId);
+    const car = await this.carRepository.find(carId);
     return car;
   }
 
@@ -35,7 +35,6 @@ class CarService {
     const { then: tax } = this.taxesBasedOnAge.find(
       (tax) => age >= tax.from && age <= tax.to
     );
-
     const totalPrice = priceCategory * tax * numberOfDays;
     const formattedPrice = this.currencyFormat.format(totalPrice);
     return formattedPrice;
@@ -48,18 +47,18 @@ class CarService {
       carCategory,
       numberOfDays
     );
-
     const today = new Date();
     today.setDate(today.getDate() + numberOfDays);
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
     const dueDate = today.toLocaleDateString('pt-br', options);
-
+    
     const transaction = new Transaction({
       customer,
       dueDate,
       car,
       amount: finalPrice,
     });
+    
     return transaction;
   }
 }

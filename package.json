@@ -8,6 +8,7 @@
   },
   "scripts": {
     "test": "npx mocha -w --parallel test/unitTests/*.test.js",
+    "test:e2e": "npx mocha -w test/e2e/*.test.js",
     "test:cov": "npx nyc npx mocha --parallel test/unitTests/*.test.js",
     "seed": "node ./seed",
     "dev:api": "node ./src/api"
@@ -19,8 +20,11 @@
     "@types/faker": "^6.6.9",
     "chai": "^4.3.10",
     "faker": "^5.1.0",
-    "mocha": "^8.4.0",
+    "mocha": "^10.2.0",
     "nyc": "^15.1.0",
     "sinon": "^9.2.4"
+  },
+  "dependencies": {
+    "supertest": "^6.3.3"
   }
 }
